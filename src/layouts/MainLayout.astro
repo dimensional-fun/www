@@ -1,0 +1,48 @@
+---
+import Footer from "~c/Footer.astro";
+
+const title = "Dimensional Fun";
+const desc = "A group of individuals focused on creating high-quality & cool things.";
+const href = "https://dimensional.fun";
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta property="theme-color" content="#906cd2" />
+
+        <link rel="icon" type="image/ico" href="/favicon.ico" />
+
+        <title>{title}</title>
+        <meta property="og:title" content={title} />
+        <meta property="twitter:title" content={title} />
+
+        <meta name="description" content={desc} />
+        <meta name="og:description" content={desc} />
+        <meta name="twitter:description" content={desc} />
+
+        <link rel="canonical" href={href} />
+        <meta property="og:url" content={href} />
+        <meta property="twitter:url" content={href} />
+
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+
+        <style>
+            @import"https://fonts.googleapis.com/css2?family=Inter:wght@100;400;500;700;900&display=swap";
+        </style>
+    </head>
+    <body class="text-zinc-100 bg-zinc-900">
+        <div class="flex py-14">
+            <div class="mx-auto px-4 max-w-[535px]">
+                <slot />
+                <Footer />
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+---
+interface Props {
+    class: string;
+}
+
+import { cn } from "~t/classes";
+
+const className = Astro.props.class;
+---
+
+<div
+    class={cn(
+        "absolute z-[-1] m-auto bg-gradient-to-tr opacity-50 blur-[112px] lg:scale-150",
+        className
+    )}
+    style={{ animation: "gradient 15s ease infinite" }}
+>
+</div>

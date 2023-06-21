@@ -1,0 +1,130 @@
+---
+import MainLayout from "~lw/MainLayout.astro";
+import Divider from "~c/Divider.astro";
+import Member, { Props as MemberInfo } from "~c/Member.astro";
+import Blob from "~c/Blob.astro";
+
+const members: MemberInfo[] = [
+    {
+        name: "Gino",
+        role: "Lead Developer",
+        bio: "Hello! I'm an 18-year-old software developer from the United States. I write most of the code behind our projects :)",
+        links: [
+            {
+                name: "Discord",
+                href: "https://discord.com/users/314219277546946561",
+                icon: "icon-[ri--discord-fill]",
+            },
+            {
+                name: "Twitter",
+                icon: "icon-[ri--twitter-fill]",
+                href: "https://twitter.com/melike2d",
+            },
+            {
+                name: "GitHub",
+                icon: "icon-[ri--github-fill]",
+                href: "https://github.com/melike2d",
+            },
+        ],
+    },
+    {
+        name: "Seren",
+        role: "Lead DevOps Engineer",
+        bio: "Hello! My name is Seren, an inspired back-end developer. I'm from the UK and a full-time college student. Currently, I work on private projects but I plan to grow and expand to open source projects.",
+        links: [
+            {
+                name: "Discord",
+                href: "https://discord.com/users/287278949548032000",
+                icon: "icon-[ri--discord-fill]",
+            },
+            {
+                name: "Twitter",
+                icon: "icon-[ri--twitter-fill]",
+                href: "https://twitter.com/SerenModz21",
+            },
+            {
+                name: "GitHub",
+                icon: "icon-[ri--github-fill]",
+                href: "https://github.com/SerenModz21",
+            },
+        ],
+    },
+    {
+        name: "Matt",
+        role: "Moral Support",
+        bio: "Greetings, the name is Matt. A passionate self taught developer from the UK. I am currently working full time as a Junior software developer to hone my skills and grow my knowledge where I hope to make a positive impact for the world via technology!",
+        links: [
+            {
+                name: "Discord",
+                href: "https://discord.com/users/284442265596854272",
+                icon: "icon-[ri--discord-fill]",
+            },
+            {
+                name: "Twitter",
+                icon: "icon-[ri--twitter-fill]",
+                href: "https://twitter.com/IamLupine",
+            },
+            {
+                name: "GitHub",
+                icon: "icon-[ri--github-fill]",
+                href: "https://github.com/AlphaLupine",
+            },
+        ],
+    },
+];
+---
+
+<MainLayout>
+    <div class="space-y-8">
+        <div class="relative">
+            <Blob
+                class="left-1/2 top-1/2 h-screen w-screen -translate-x-1/2 -translate-y-1/2 from-primary-base to-fuchsia-400 bg-[length:200%_200%] lg:h-96 lg:w-96"
+            />
+            <h1 class="text-3xl font-bold">Dimensional Fun 👽</h1>
+            <p class="text-lg">
+                A group of individuals focused on creating high-quality & cool
+                things.
+            </p>
+        </div>
+
+        <Divider />
+
+        <div class="text-zinc-100">
+            <h2 class="text-xl font-bold">Meet Our Members</h2>
+            <p>
+                Some of our highly motivated and talented group of developers :)
+            </p>
+
+            <div class="space-y-4 mt-3">
+                {members.map((m) => <Member {...m} />)}
+            </div>
+        </div>
+
+        <Divider />
+
+        <div>
+            <h2 class="text-xl font-bold">Contact Us</h2>
+            <p>
+                The fastest and easiest way to contact us is through our
+                <strong>Discord</strong>, however, if you do need to contact us
+                via email, please choose one of the following:
+                <ol class="mt-3 list-disc list-inside">
+                    <li>
+                        <a
+                            class="hover:underline font-medium"
+                            href="mailto:contact@dimensional.fun"
+                            >contact@dimensional.fun</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            class="hover:underline font-medium"
+                            href="mailto:opensource@dimensional.fun"
+                            >opensource@dimensional.fun</a
+                        >
+                    </li>
+                </ol>
+            </p>
+        </div>
+    </div>
+</MainLayout>

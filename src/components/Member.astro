@@ -1,0 +1,30 @@
+---
+import { cn } from '~t/classes';
+export interface Props {
+    name: string;
+    role: string;
+    bio: string;
+    links: { name: string, icon: string, href: string }[]
+}
+
+const { links, name, role, bio } = Astro.props;
+---
+
+<div
+    class="bg-zinc-500/10 backdrop-blur-3xl p-4 outline outline-1 outline-zinc-500/50 rounded shadow-xl"
+>
+    <div class="flex flex-row items-center justify-between">
+        <div class="flex flex-row items-center space-x-2">
+            <h3 class="font-semibold">{name}</h3>
+            <span class="text-zinc-100/60 text-xs">{role}</span>
+        </div>
+        <div class="flex space-x-2 items-center text-xl">
+            {links.map(l => 
+                <a title={l.name} class={cn(l.icon, "transition text-zinc-200/50 ease-in-out hover:text-zinc-200/80")} href={l.href}></a>
+            )}
+        </div>
+    </div>
+    <p class="text-sm">
+        {bio}
+    </p>
+</div>
